@@ -1,0 +1,46 @@
+/*
+    Name: Rochelle Bauer
+    email: bauerr@uindy.edu
+    Date: 02/04/2019
+    Class: CSCI 155-01
+    Assignment: Lab #3--Apple Picker
+    Desc: Apple picker interacts with a user to compute apple buying transaction
+    To compile , type this, gcc filename.c
+    To compile , type this, ./a.out
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (void) {
+    
+    char firstName[10];
+    char lastName[10];
+    int numApples, numFives, total;
+    double cost, change;
+
+    printf("Welcome to the apple orchard! What's your first and last name?\n");
+    scanf("%s", firstName);
+    scanf("%s", lastName);
+    
+    printf("Hello %s %s. I sell apples for $0.25 each.\n", firstName, lastName);
+    printf("How many apples did you pick today?\n");
+    scanf("%d", &numApples);
+    
+    cost =(0.25 *numApples); // calculates the cost of the apples user picked
+    printf("You owe me $%.2lf.\n", cost);
+
+    printf("I only accept $5 bills. How many $5 do you have?\n");
+    scanf("%d", &numFives);
+    
+    total = numFives * 5; // calculates the amount given the number 5s user has
+
+    printf("Thanks! You paid me a total of $%d.\n", total);
+
+    change = total - cost; // calculates the change the user will recieve
+
+    printf("Okay, here is your change of $%.2lf.\n", change);
+    printf("Thanks for picking apples today, %s %s.\n", firstName, lastName);
+    
+    return 0;
+}
