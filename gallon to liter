@@ -1,0 +1,29 @@
+/* Name: Rochelle Bauer
+    email: bauerr@uindy.edu
+    Date: 02/14/2019
+    Class: CSCI 155-01
+    Assignment: test1_stylecode
+    Desc: convert gallons to liter
+*/
+
+#include <stdio.h>
+
+int main () {
+
+    double numGallons, numLiters, gallon1; // "double" to allow for decimals
+    
+    gallon1 = 3.785; // establishes conversion factor; 1 gallon = 3.785 liters
+    
+    printf("Enter number of gallons:\n");
+    scanf("%lf", &numGallons); // allows user to input number of gallons
+
+    numLiters = (numGallons * gallon1); // converts user input to liters
+    
+    printf("%.3lf gallons is equal to %.3lf liters.\n", numGallons, numLiters);
+    // prints answer in sentence form; ".3" with %lf keeps answer to 3 decimals
+    
+    return 0;
+
+}
+
+// compiles normally with gcc gallonliter.c and ./a.out
