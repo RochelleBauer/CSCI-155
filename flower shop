@@ -1,0 +1,54 @@
+/*
+    Name: Rochelle Bauer
+    Date: 02/04/2019
+    Desc: CSCI 155 Class "game" assignment
+    To compile , type this, gcc filename.c
+    To compile , type this, ./a.out
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main (void) {
+    
+    char firstName[20];
+    int costRoses, costDaisies, numberRoses, numberDaisies, totalCost, change;
+    int numfives;
+    costRoses = 3;
+    costDaisies = 1;
+    
+    printf("Welcome to the flower shop! What's your name for the order?\n");
+    printf("Hello, I'm \n");
+    scanf("%s", firstName);
+    
+    printf("Thanks %s, how can I help you today?\n", firstName);
+    printf("I need some flowers.\n");
+    
+    printf("We have daisies and roses. ");
+    printf("Daisies are $%d and roses are $%d.\n", costDaisies, costRoses);
+
+    printf("Can I have ");
+    scanf("%d", &numberRoses);
+    printf("roses and ");
+    scanf("%d", &numberDaisies);
+    printf("daisies, please?\n");
+    
+    totalCost = (numberRoses * 3) + (numberDaisies * 1);
+    printf("Of course! Your total is going to be $%d.\n", totalCost);
+    
+    printf("Can you break a 20?\n");
+    printf("Sorry! I only accept $5 bills.\n");
+    
+    printf("Okay, I have ");
+    scanf("%d", &numfives);
+    printf("$5 bills.\n");
+    
+    change = (5*numfives) - totalCost;
+    
+    printf("Okay, your change is $%d.\n", change);
+    
+    printf("Thank you!\n");
+    printf("Have a good day, %s!\n", firstName);
+    
+return 0;
+}
