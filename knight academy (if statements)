@@ -1,0 +1,97 @@
+/* Name: Rochelle Bauer
+    email: bauerr@uindy.edu
+    Date: 02/22/2019
+    Class: CSCI 155-01
+    Assignment: Lab 4
+    Desc: role playing game with a user; knight academy choices about bravery
+*/
+
+#include <stdio.h>
+
+int main(void) {
+    
+    char name[10];
+    int bravery=0;
+    int life=100;
+    int bully;
+    int roof;
+    int apple;
+    int choice1;
+    
+    printf("Enter '1' for yes and '0' for no throughout the game.\n\n");
+    
+    printf("Welcome to the Knight Academy! What's your name?\n");
+    scanf("%s", name);
+    
+    printf("\nHello %s. You see a bully. Do you stop them?\n", name);
+    scanf("%d", &bully);
+    
+    if (bully==1) {
+        printf("You stopped the bully but they hit you!\n");
+        bravery=bravery+25;
+        life=life-5;
+        printf("You have %d bravery points and %d life points!\n\n", bravery, life);
+    }
+    
+    else {
+        printf("You didn't stop the bully!\n");
+        bravery=bravery-5;
+        life=life;
+        printf("You have %d bravery points and %d life points!\n\n", bravery, life);
+    }
+    
+    printf("%s, a friend dares you to jump off the roof. Do you accept?\n", name);
+    scanf("%d", &roof);
+    
+    if(roof==1) {
+        printf("You made the jump but it hurt a little!\n");
+        bravery=bravery+35;
+        life=life-5;
+        printf("You have %d bravery points and %d life points!\n\n", bravery, life);
+    }
+    
+    else {
+        printf("You didn't risk the jump!\n");
+        bravery=bravery-5;
+        life=life;
+        printf("You have %d bravery points and %d life points!\n\n", bravery, life);
+    }
+    
+    printf("%s, a friend wants to shoot an apple off your head. Do you accept?\n", name);
+    scanf("%d", &apple);
+    
+    if(apple==1) {
+        printf("They messed your hair up but you're okay!\n");
+        bravery=bravery+30;
+        life=life-5;
+        printf("You have %d bravery points and %d life points!\n", bravery, life);
+    }
+    
+    else {
+        printf("You didn't trust your friend enough!\n");
+        bravery=bravery-5;
+        life=life;
+        printf("You have %d bravery points and %d life points!\n\n", bravery, life);
+    }
+    
+    if (bravery >= 50) {
+        printf("\nYou're ready to rescue the princess!\n");
+        printf("Do you want to fight the dragon: 1 or sneak around back: 0?\n");
+        scanf("%d", &choice1);
+        if (choice1==1) {
+            printf("You killed the dragon and saved the princess!\n\n");
+            bravery=bravery+50;
+            life=life-25;
+            printf("%s, you finished with %d bravery points and %d life points!\n", name, bravery, life);
+        }
+        else {
+            printf("The dragon saw you and ate you! Try again!\n\n");
+        }
+    }
+    else if (bravery < 50) {
+        printf("You're not brave enough to rescue the princess this round! \n");
+    }
+    
+    
+    return 0;
+}
