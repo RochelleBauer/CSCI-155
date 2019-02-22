@@ -1,0 +1,53 @@
+/*
+    Name: Rochelle Bauer
+    Date: 01/24/2019
+    Desc: CSCI 155 3D Shapes Lab; Surface Area and Volume
+    To compile , type this, gcc filename.c
+    To compile , type this, ./a.out
+*/
+
+#include<stdio.h>
+#include <math.h>   /* so code recognizes "atan" when defining PI */
+
+int main(void) {
+    float sa_cube, l, v_cube;
+    printf("....................\n");
+    printf("Shape : Cube\n");
+    
+/*  surface area of a cube : 6*length^2 */
+    printf("enter l: \n");
+    scanf("%f",&l);
+    printf("\n");
+    sa_cube = 6 * (l * l);
+    printf("The surface area of the cube is %f cm \n\n\n\n", sa_cube);
+    
+/*  volume of a cube : length^3 */
+    v_cube=l * l * l;
+    printf("The volume+ of the cube is %f cm \n\n\n\n", v_cube);
+    printf("....................\n");
+    
+/*  Surface Area of a cone = π × r × (r + s) */
+    float PI, r, s, h, sa_cone, v_cone;
+    printf("Shape : Cone\n");
+    
+    printf("enter r: \n");
+    scanf("%f",&r);
+    printf("\n");
+    printf("enter s: \n");
+    scanf("%f",&s);
+    printf("\n");
+    
+    PI = 4 * atan(1);
+    sa_cone = PI * r * (r + s);
+    printf("The surface area of the cone is %f cm \n\n\n\n", sa_cone);
+
+/* Volume of a cone =  (1/3) π × r^2 × h */
+    printf("enter h: \n");
+    scanf("%f",&h);
+    printf("\n");
+    v_cone= (PI/3) * (r*r) * h;
+    printf("The volume of the cone is %f cm \n\n\n\n", v_cone);
+
+    return 0;
+    
+}
