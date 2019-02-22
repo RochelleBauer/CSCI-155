@@ -1,0 +1,31 @@
+/*
+    Name: Rochelle Bauer
+    Date: 01/31/2019
+    Desc: CSCI 155 Homework Assignment # 1; Distance Formula
+    To compile , type this, gcc filename.c
+    To compile , type this, ./a.out
+*/
+
+#include <stdio.h>
+#include <math.h> // let's us use the sqrt and pow functions
+
+int main(void)
+{
+   double x1, y1, x2, y2, xDist, yDist, dist; // indentifying our variables
+   
+   printf("choose (x1, y1) and press space between each number, then enter: ");
+   scanf("%lf %lf", &x1, &y1); // user chooses first point (x1, y1)
+   printf("choose (x2, y2) and press space between each number, then enter: ");
+   scanf("%lf %lf", &x2, &y2); // user chooses second point (x2, y2)
+   
+   xDist = pow((x2 - x1), 2); // breaks up calculation, solves for (x2-x1)^2
+   yDist = pow((y2 - y1), 2); // breaks up calculation, solves for (y2-y1)^2
+
+   dist = sqrt(xDist + yDist); // square root of the differences squared, answer
+
+   printf("The distance of the points (%lf, %lf) ", x1, y1);
+   printf("and (%lf, %lf) is equal to --> %lf", x2, y2, dist);
+   // produces result in sentence format
+   
+   return 0;
+}
