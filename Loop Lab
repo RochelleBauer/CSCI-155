@@ -1,0 +1,88 @@
+/*
+    Name: Rochelle Bauer
+    email: bauerr@uindy.edu
+    Date: 02/28/2019
+    Class: CSCI 155-01
+    Assignment: Lab #5--Loops
+    Desc: user chooses a task 
+    To compile , type this, gcc filename.c
+    To compile , type this, ./a.out
+*/
+
+# include <stdio.h>
+
+int main (void) {
+
+    int choice;
+    int sosRepeat;
+    int lineWidth;
+    int x=0;
+    int y=0;
+    int z=0;
+    int range1, range2;
+   
+while (choice != 4) { // keeps option going back to the menu of choices
+    
+    printf("Below are four options--- \n");
+    printf(" 1: Horizontal Line\n 2: SOS\n 3: Range\n 4: Exit\n\n");
+    printf("Which would you like to do?\n");
+    scanf("%d", &choice);
+
+// Horizontal Line Choice
+    if (choice == 1) {
+        printf("\nYou picked Horizontal Line.\n");
+        printf("How wide do you want the line to be?\n");
+        scanf(" %d", &lineWidth);
+            
+            if (lineWidth < 0) { // allows user to re-enter number is negative
+                printf("Sorry! That's a negative number! Try a postive one!");
+            }
+            
+            else {
+                x = 0;
+                while (lineWidth > x ) {
+                    x = x + 1;
+                    printf("*"); // repeats * for user entered number
+                }
+            }
+    }
+    
+// SOS Choice
+    if (choice == 2) {
+        printf("You have chosen SOS. How many times would you like to repeat?\n");
+        scanf(" %d", &sosRepeat);
+        
+        for (y = 0; sosRepeat > y; ++y) {
+                printf("...---... "); // repeats code for user entered number
+            }
+            
+        if (sosRepeat < 0) {  // allows user to re-enter number is negative
+                printf("Sorry! That's a negative number! Try a postive one!\n");
+        }
+    }
+    
+// Range Choice
+    if (choice == 3) {
+        printf("You have chosen Range. Enter two numbers.\n");
+        printf("Enter one number, then press enter.\n");
+        scanf("%d", &range1);
+        scanf("%d", &range2);
+        printf("You have entered %d and %d.\n", range1, range2);
+        
+        if (range1 <= range2) {             // little number first
+            for (z = range1; z <= range2; ++z) {
+                printf("%d ", z);
+            }
+        }
+        else {                          // swaps if bigger number entered first
+            for (z=range2; z <= range1; ++z) {
+                printf("%d ", z);
+            }
+        }
+
+    }
+    
+}
+
+return 0;
+}
